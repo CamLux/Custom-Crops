@@ -1,13 +1,17 @@
 repositories {
+    flatDir {
+        dirs(rootProject.file("libs"))
+    }
     mavenCentral()
-//    maven("https://repo.rapture.pw/repository/maven-releases/")
-//    maven("https://repo.infernalsuite.com/repository/maven-snapshots/")
+    maven("https://repo.infernalsuite.com/repository/maven-snapshots/")
     maven("https://repo.papermc.io/repository/maven-public/")
 }
 
 dependencies {
     compileOnly(project(":api"))
     compileOnly("dev.folia:folia-api:1.20.4-R0.1-SNAPSHOT")
+    compileOnly("com.infernalsuite.aswm:api:1.20.4-R0.1-SNAPSHOT")
+    compileOnly("com.flowpowered:flow-nbt:2.0.2")
     compileOnly(files("${rootProject.rootDir}/libs/flow-nbt-2.0.2.jar"))
     compileOnly(files("/libs/api-1.20.4-R0.1-20240524.171344-26.jar"))
 }
